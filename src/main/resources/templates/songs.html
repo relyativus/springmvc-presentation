@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple songs list</title>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Author</td>
+            <td>Duration</td>
+            <td>Genres</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="song : ${songs}">
+            <td th:text="${song.id}"></td>
+            <td th:text="${song.trackName}"></td>
+            <td th:text="${song.author}"></td>
+            <td th:text="${song.duration.toString()}"></td>
+            <td th:text="${#strings.arrayJoin(song.genres, ',')}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
