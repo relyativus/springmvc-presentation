@@ -47,4 +47,16 @@ public class DefaultSongInfoRepository implements SongInfoRepository {
     public Optional<SongInfo> findById(Long id) {
         return storage.stream().filter(info -> info.getId().equals(id)).findAny();
     }
+
+    @Override
+    public boolean update(Long id, SongInfo updates) {
+        final Optional<SongInfo> matchSongOptional = findById(id);
+        matchSongOptional.ifPresent(info -> info.update(updates));
+        return matchSongOptional.isPresent();
+    }
+
+    @Override
+    public boolean remove(Long id) {
+        return storage.removeIf(info -> info.getId().equals(id));
+    }
 }

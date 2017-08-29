@@ -33,4 +33,14 @@ public class DefaultSongService implements SongService {
     public Optional<SongInfo> findByName(final String name) {
         return songInfoRepository.findByName(name);
     }
+
+    @Override
+    public boolean update(Long id, SongInfo updates) {
+        return this.songInfoRepository.update(id, updates);
+    }
+
+    @Override
+    public boolean remove(Long id) {
+        return this.songInfoRepository.remove(id);
+    }
 }

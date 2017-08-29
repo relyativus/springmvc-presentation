@@ -32,4 +32,11 @@ public class SongInfo {
     public void setContent(MultipartFile multipartFile) {
         this.content = multipartFile.getBytes();
     }
+
+    public void update(SongInfo songInfo) {
+        this.trackName = songInfo.trackName;
+        this.author = songInfo.author;
+        this.duration = songInfo.duration;
+        this.genres = songInfo.genres;
+    }
 }

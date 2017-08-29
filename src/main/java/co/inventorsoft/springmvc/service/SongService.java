@@ -14,4 +14,8 @@ public interface SongService {
     Optional<SongInfo> findByName(final String name);
 
     Optional<SongInfo> findById(final Long id);
+
+    boolean update(final Long id, final SongInfo updates);
+
+    boolean remove(final Long id);
 }

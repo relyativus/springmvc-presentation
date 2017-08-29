@@ -14,4 +14,8 @@ public interface SongInfoRepository {
     Optional<SongInfo> findByName(final String name);
 
     Optional<SongInfo> findById(final Long id);
+
+    boolean update(final Long id, final SongInfo newInfo);
+
+    boolean remove(final Long id);
 }
